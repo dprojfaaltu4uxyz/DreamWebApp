@@ -33,7 +33,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 	RoleToUserProfileConverter roleToUserProfileConverter;
 	
 	@Autowired
-	AtmosphereResolver atmosphereResolver;
+	AtmosphereResolver atmosphereResolver; 
 	
 	@Bean(name="multipartResolver")
 	public StandardServletMultipartResolver resolver(){
