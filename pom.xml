@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.webapp.project</groupId>
-	<artifactId>projectHibernateManyToManyCRUDExample</artifactId>
+	<artifactId>DreamWebApp</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>projectHibernateWithSpringSecurityExample</name>
+	<name>DreamWebApp</name>
 
   	<properties>
 		<springframework.version>4.2.5.RELEASE</springframework.version>
@@ -156,12 +156,12 @@
 					<version>2.4</version>
 					<configuration>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<warName>projectHibernateWithSpringSecurityExample</warName>
+						<warName>DreamWebApp</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>projectHibernateWithSpringSecurityExample</finalName>
+		<finalName>DreamWebApp</finalName>
 	</build>
 </project>
