@@ -473,13 +473,7 @@ public class Teacher implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Teacher [teacherId=" + teacherId + ", firstName=" + firstName + ", middleName=" + middleName
-				+ ", lastName=" + lastName + ", userName=" + userName + ", password=" + password + ", email=" + email
-				+ ", designation=" + designation + ", religion=" + religion + ", phone=" + phone + ", address="
-				+ address + ", dob=" + dob + ", jod=" + jod + ", gender=" + gender + ", userType=" + userType
-				+ ", createDate=" + createDate + ", modifyDate=" + modifyDate + ", createUserId=" + createUserId
-				+ ", createUserName=" + createUserName + ", createUserType=" + createUserType + ", teacherActive="
-				+ teacherActive + ", user=" + user + "]";
+		return firstName ;
 	}
 
 }

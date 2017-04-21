@@ -32,7 +32,7 @@ public class SectionController {
 	@InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Teacher.class, new TeacherEditor());
-        binder.registerCustomEditor(Teacher.class, new ClassesEditor());
+        binder.registerCustomEditor(Classes.class, new ClassesEditor());
     }
 
 	
@@ -85,7 +85,7 @@ public class SectionController {
 		return "section/sectionListJSP";
 	}
 
-	@RequestMapping(value={"/newsection"},method = RequestMethod.POST)
+	@RequestMapping(value={"/section"},method = RequestMethod.POST)
 	public String SaveClass(@Valid Section section,BindingResult result,
 			ModelMap model){
 		
