@@ -194,8 +194,8 @@ public class Classes implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Classes [classesId=" + classesId + ", classes=" + classes + ", classesNumeric=" + classesNumeric
-				+ ", note=" + note + "]";
+		return classes ;
+		
 	}
 
 }

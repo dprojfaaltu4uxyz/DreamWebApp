@@ -32,11 +32,11 @@ public class Section implements java.io.Serializable {
 	private Integer capacity;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "teacherId")
+	@JoinColumn(name = "teacherID")
 	private Teacher teacher;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "classesId")
+	@JoinColumn(name = "classesID")
 	private Classes classes;
 	
 	private String note;
@@ -135,6 +135,7 @@ public class Section implements java.io.Serializable {
 		this.createUsertype = createUsertype;
 	}
 
+	@Column(name = "teacherID",nullable=false)
 	public Teacher getTeacher() {
 		return teacher;
 	}
@@ -143,6 +144,7 @@ public class Section implements java.io.Serializable {
 		this.teacher = teacher;
 	}
 
+	//@Column(name = "classesID",nullable=false)
 	public Classes getClasses() {
 		return classes;
 	}
@@ -151,7 +153,7 @@ public class Section implements java.io.Serializable {
 		this.classes = classes;
 	}
 	
-	@Column(name = "capacity", nullable = false)
+	@Column(name = "capacity", nullable = true)
 	public Integer getCapacity() {
 		return capacity;
 	}

@@ -242,7 +242,7 @@
 													</div>
 													<div class="form-group">
 													<label>Class Name</label>
-													<form:select path="teacher" items="${classesList}"
+													<form:select path="classes" items="${classesList}"
 																multiple="false" style="width: 100%" class="select2" />
 															<div class="has-error">
 																<form:errors path="classes" class="help-inline" />
