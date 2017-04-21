@@ -31,8 +31,9 @@ public class SectionController {
 	
 	@InitBinder
     public void initBinder(WebDataBinder binder) {
-        binder.registerCustomEditor(Teacher.class, new TeacherEditor());
+        
         binder.registerCustomEditor(Classes.class, new ClassesEditor());
+        binder.registerCustomEditor(Teacher.class, new TeacherEditor());
     }
 
 	
