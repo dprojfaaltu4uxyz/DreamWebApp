@@ -144,7 +144,7 @@ public class Section implements java.io.Serializable {
 		this.teacher = teacher;
 	}
 
-	//@Column(name = "classesID",nullable=false)
+	@Column(name = "classesID",nullable=false)
 	public Classes getClasses() {
 		return classes;
 	}
