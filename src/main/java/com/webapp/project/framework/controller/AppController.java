@@ -107,7 +107,7 @@ public class AppController {
 		model.addAttribute("success", "User " + user.getFirstName() + " "+ user.getLastName() + " registered successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		//return "success";
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 
 
@@ -147,7 +147,7 @@ public class AppController {
 
 		model.addAttribute("success", "User " + user.getFirstName() + " "+ user.getLastName() + " updated successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 
 	

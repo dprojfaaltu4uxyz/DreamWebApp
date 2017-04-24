@@ -30,13 +30,11 @@ public class Section implements java.io.Serializable {
 	private String section;
 	private String category;
 	private Integer capacity;
+	 
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "teacherID")
 	private Teacher teacher;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "classesID")
+	
 	private Classes classes;
 	
 	private String note;
@@ -126,7 +124,7 @@ public class Section implements java.io.Serializable {
 		this.createUsername = createUsername;
 	}
 
-	@Column(name = "create_usertype", nullable = false, length = 20)
+	@Column(name = "create_usertype", nullable = true, length = 20)
 	public String getCreateUsertype() {
 		return this.createUsertype;
 	}
@@ -135,7 +133,8 @@ public class Section implements java.io.Serializable {
 		this.createUsertype = createUsertype;
 	}
 
-	@Column(name = "teacherID",nullable=false)
+	@ManyToOne
+	@JoinColumn(name = "teacherID")
 	public Teacher getTeacher() {
 		return teacher;
 	}
@@ -144,7 +143,8 @@ public class Section implements java.io.Serializable {
 		this.teacher = teacher;
 	}
 
-	@Column(name = "classesID",nullable=false)
+	@ManyToOne
+	@JoinColumn(name = "classesID")
 	public Classes getClasses() {
 		return classes;
 	}

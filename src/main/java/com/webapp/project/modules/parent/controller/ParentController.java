@@ -135,7 +135,7 @@ public class ParentController {
 		model.addAttribute("success", "Parent " + parent.getUserName() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		//return "success";
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 	
 }

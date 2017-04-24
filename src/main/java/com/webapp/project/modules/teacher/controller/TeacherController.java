@@ -141,7 +141,7 @@ public class TeacherController {
 		model.addAttribute("success", "Teacher " + teacher.getUserName() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		//return "success";
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 	
 }

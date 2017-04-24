@@ -194,14 +194,16 @@
 													</div>
 													<div class="form-group">
 													<label>Teacher Name</label>
-													<form:select path="teacher" items="${teacherList}" id="teacher"
-																multiple="false" style="width: 100%" class="select2" itemValue="teacherId" itemLabel="firstName" >
-													
-													<!--<c:forEach items="${teacherList}" var="teacher">
-														<option value="${teacher.key }">${teacher.value}</option>			
-												    </c:forEach>-->
-																
+													<form:select path="teacher" 
+																multiple="false" style="width: 100%" class="select2" >
+															<option value="0">Select Teacher</option>			
+															<c:forEach var="teacher" items="${teacherList}">
+																<option value="${teacher.teacherId}">${teacher.firstName}</option>	
+															</c:forEach>
+															
 													</form:select>			
+													
+																
 															<div class="has-error">
 																<form:errors path="teacher" class="help-inline" />
 															</div>

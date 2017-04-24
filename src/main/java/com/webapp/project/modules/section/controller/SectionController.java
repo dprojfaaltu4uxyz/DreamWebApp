@@ -18,16 +18,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webapp.project.modules.classes.model.Classes;
 import com.webapp.project.modules.classes.model.modeleditor.ClassesEditor;
+import com.webapp.project.modules.classes.service.ClassesService;
 import com.webapp.project.modules.section.model.Section;
 import com.webapp.project.modules.section.service.SectionService;
 import com.webapp.project.modules.teacher.model.Teacher;
 import com.webapp.project.modules.teacher.model.modeleditor.TeacherEditor;
+import com.webapp.project.modules.teacher.service.TeacherService;
 
 @Controller
 public class SectionController {
 
 	@Autowired
 	SectionService sectionService;
+	
+
+	@Autowired
+	TeacherService teacherService ;
+	
+	@Autowired
+	ClassesService classesService ;
 	
 	@InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -43,12 +52,14 @@ public class SectionController {
 		Section section = new Section();
 		
 		List<Teacher> teacherList = new ArrayList<>();
-		teacherList.add(new Teacher(3, "Akshay"));
-		teacherList.add(new Teacher(2, "Gautam"));
+		teacherList = teacherService.findAllTeachers();
+		/*teacherList.add(new Teacher(3, "Akshay"));
+		teacherList.add(new Teacher(2, "Gautam"));*/
 		
 		List<Classes> classsesList = new ArrayList<>();
-		classsesList.add(new Classes(1, "Class one"));
-		classsesList.add(new Classes(2, "Class two"));
+		classsesList = classesService.findAllClasses();
+		/*classsesList.add(new Classes(1, "Class one"));
+		classsesList.add(new Classes(2, "Class two"));*/
 		
 		model.addAttribute("loggedinuser", getPrincipal());
 		model.addAttribute("teacherList", teacherList);
@@ -97,13 +108,11 @@ public class SectionController {
 	        //phones.put("other", "OTHER"); c
 			
 			List<Teacher> teacherList = new ArrayList<>();
-			teacherList.add(new Teacher(3, "Akshay"));
-			teacherList.add(new Teacher(2, "Gautam"));
+			teacherList = teacherService.findAllTeachers();
 			
 
 			List<Classes> classsesList = new ArrayList<>();
-			classsesList.add(new Classes(1, "Class one"));
-			classsesList.add(new Classes(2, "Class two"));
+			classsesList = classesService.findAllClasses();
 			
 			model.addAttribute("loggedinuser", getPrincipal());
 			model.addAttribute("classsesList", classsesList);
@@ -114,6 +123,7 @@ public class SectionController {
 		//Teacher teacher = new Teacher();
 		System.out.println(section.getTeacher());
 		section.setTeacher(section.getTeacher());
+		section.setClasses(section.getClasses());
 		
 		section.setCreateUsername(getPrincipal());
 		sectionService.saveSection(section);
@@ -121,7 +131,7 @@ public class SectionController {
 		model.addAttribute("success", "Class " + section.getClasses() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 	
 }

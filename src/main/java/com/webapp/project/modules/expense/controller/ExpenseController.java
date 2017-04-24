@@ -112,7 +112,7 @@ public class ExpenseController {
 		//model.addAttribute("success", "Class " + expense.getClasses() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 	
 }

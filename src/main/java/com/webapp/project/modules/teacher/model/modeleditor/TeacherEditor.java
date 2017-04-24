@@ -13,14 +13,17 @@ public class TeacherEditor extends PropertyEditorSupport{
     //This will be called when user HTTP Post to server a field bound to DepartmentVO
     public void setAsText(String id) 
     {
-    	Map<String,Teacher> teacherMap = new HashMap();
-    	teacherMap.put("Akshay",new Teacher(3,  "Akshay"));
-    	teacherMap.put("Gautam",new Teacher(2,  "Gautam"));
+    	Map<Integer,Teacher> teacherMap = new HashMap();
+    	teacherMap.put(3,new Teacher(3,  "Akshay"));
+    	teacherMap.put(2,new Teacher(2,  "Gautam"));
     	
         Teacher d = null;
-       if(teacherMap.get(id)!=null){
-    	   d = teacherMap.get(id);
-       }
-        this.setValue(d);
+        if(id !=null || id != ""){
+
+			if(teacherMap.get(Integer.parseInt(id))!=null){
+				d = teacherMap.get(Integer.parseInt(id));
+			}
+			this.setValue(d);
+		}
     }
 }

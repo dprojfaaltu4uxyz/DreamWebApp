@@ -92,7 +92,7 @@ public class PaymentHistoryController {/*
 		model.addAttribute("success", "Class " + classes.getClasses() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 	
 */}

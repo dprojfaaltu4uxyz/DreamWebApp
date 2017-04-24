@@ -242,16 +242,28 @@
 													</div>
 													<div class="form-group">
 													<label>Class Name</label>
-													<form:select path="classes" items="${classesList}"
-																multiple="false" style="width: 100%" class="select2" />
+													<form:select path="classes" 
+																multiple="false" style="width: 100%" class="select2" >
+															<option value="0">Select Class</option>			
+															<c:forEach var="classes" items="${classesList}">
+																<option value="${classes.classesId}">${classes.classes}</option>	
+															</c:forEach>
+															
+													</form:select>
 															<div class="has-error">
 																<form:errors path="classes" class="help-inline" />
 															</div>
 													</div>
 													<div class="form-group">
 													<label>Teacher Name</label>
-													<form:select path="teacher" items="${teacherList}"
-																multiple="false" style="width: 100%" class="select2" />
+													<form:select path="teacher" 
+																multiple="false" style="width: 100%" class="select2" >
+															<option value="0">Select Teacher</option>			
+															<c:forEach var="teacher" items="${teacherList}">
+																<option value="${teacher.teacherId}">${teacher.firstName}</option>	
+															</c:forEach>
+															
+													</form:select>			
 															<div class="has-error">
 																<form:errors path="teacher" class="help-inline" />
 															</div>

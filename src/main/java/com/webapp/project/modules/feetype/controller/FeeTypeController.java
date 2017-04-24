@@ -77,7 +77,7 @@ public class FeeTypeController {
 		model.addAttribute("success", "Fee Type " + feeType.getFeetypes() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
 		
-		return "registrationsuccess";
+		return "registrationsuccessJSP";
 	}
 	
 }

@@ -2,5 +2,5 @@ eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pagetemplate/multiLanguageJSP.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pagetemplate/topPanelJSP.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/registration.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/registrationJSP.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/userListJSP.jsp=UTF-8
