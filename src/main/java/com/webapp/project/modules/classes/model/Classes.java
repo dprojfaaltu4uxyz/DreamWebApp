@@ -24,6 +24,7 @@ public class Classes implements Serializable{
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CLASSESID", nullable=false)
+	@org.springframework.data.annotation.Id
 	private Integer classesId;
 	
 	@NotEmpty

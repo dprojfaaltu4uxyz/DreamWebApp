@@ -14,8 +14,7 @@ public class TeacherEditor extends PropertyEditorSupport{
     public void setAsText(String id) 
     {
     	Map<Integer,Teacher> teacherMap = new HashMap();
-    	teacherMap.put(3,new Teacher(3,  "Akshay"));
-    	teacherMap.put(2,new Teacher(2,  "Gautam"));
+    	teacherMap.put(5,new Teacher(5,  "Anup"));
     	
         Teacher d = null;
         if(id !=null || id != ""){

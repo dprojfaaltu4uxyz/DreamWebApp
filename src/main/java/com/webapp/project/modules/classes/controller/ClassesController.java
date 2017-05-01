@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webapp.project.modules.classes.model.Classes;
+import com.webapp.project.modules.classes.repository.ClassesRepository;
 import com.webapp.project.modules.classes.service.ClassesService;
 import com.webapp.project.modules.teacher.model.Teacher;
 import com.webapp.project.modules.teacher.model.modeleditor.TeacherEditor;
+import com.webapp.project.modules.teacher.service.TeacherService;
 
 @Controller
 public class ClassesController {
@@ -27,6 +29,13 @@ public class ClassesController {
 	
 	@Autowired
 	ClassesService classesService;
+	
+	@Autowired
+	ClassesRepository classesRepository;
+	
+
+	@Autowired
+	TeacherService teacherService ;
 	
 	@InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -56,8 +65,7 @@ public class ClassesController {
         //phones.put("other", "OTHER"); 
 */		
 		List<Teacher> teacherList = new ArrayList<>();
-		teacherList.add(new Teacher(3, "Akshay"));
-		teacherList.add(new Teacher(2, "Gautam"));
+		teacherList = teacherService.findAllTeachers();
 		
 		model.addAttribute("loggedinuser", getPrincipal());
 		model.addAttribute("classes", classes);
@@ -92,8 +100,7 @@ public class ClassesController {
 	        //phones.put("other", "OTHER"); c
 			
 			List<Teacher> teacherList = new ArrayList<>();
-			teacherList.add(new Teacher(3, "Akshay"));
-			teacherList.add(new Teacher(2, "Gautam"));
+			teacherList = teacherService.findAllTeachers();
 			
 			model.addAttribute("loggedinuser", getPrincipal());
 			model.addAttribute("classes", classes);
@@ -110,6 +117,12 @@ public class ClassesController {
 		
 		model.addAttribute("success", "Class " + classes.getClasses() + " added successfully");
 		model.addAttribute("loggedinuser", getPrincipal());
+		
+		
+		//save in mongodb
+		
+		classesRepository.save(classes);
+		
 		
 		return "registrationsuccessJSP";
 	}

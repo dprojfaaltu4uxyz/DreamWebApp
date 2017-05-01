@@ -301,14 +301,15 @@
 			}
 		</script>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		
 		<script>
-			if (!window.jQuery.ui) {
+		if (!window.jQuery.ui) {
 				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
 			}
 		</script>
-
-		<!-- IMPORTANT: APP CONFIG -->
+		
+				<!-- IMPORTANT: APP CONFIG -->
 		<script src="<c:url value='/static/js/app.config.js' />"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
@@ -373,6 +374,8 @@
 		<script src="<c:url value='/static/js/plugin/datatables/dataTables.tableTools.min.js' />" ></script>
 		<script src="<c:url value='/static/js/plugin/datatables/dataTables.bootstrap.min.js' />" ></script>
 		<script src="<c:url value='/static/js/plugin/datatable-responsive/datatables.responsive.min.js' />" ></script>
+		
+		
 
 		<script type="text/javascript">
 		
@@ -416,9 +419,10 @@
 					}
 				});
 	
-			/* END BASIC */
-			
-			/* COLUMN FILTER  */
+				/* END BASIC */
+
+
+				/* COLUMN FILTER  */
 		    var otable = $('#datatable_fixed_column').DataTable({
 		    	//"bFilter": false,
 		    	//"bInfo": false,
