@@ -43,10 +43,7 @@ public class Section implements java.io.Serializable {
 	private int createUserId;
 	private String createUsername;
 	private String createUsertype;
-
-	
-	
-	
+		
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 
